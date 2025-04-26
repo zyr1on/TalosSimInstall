@@ -19,4 +19,7 @@ $ ./install.sh
 $ chmod +x installRosNoetic.sh
 $ ./installRosNoetic.sh
 
+# SIM CALISTIRMAK ICIN
+$ chmod +x run.sh
+$ ./run.sh
 
