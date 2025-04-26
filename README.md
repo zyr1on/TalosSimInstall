@@ -11,6 +11,9 @@ git <br>
 curl<br>
 <br>
 
+# TALOS SIM INDIRMEK ICIN
+<li><code>chmod +x install.sh</code></li>
+<li><code>./install.sh</code></li>
 # ROS NEOTIC YOKSA INDIRMEK ICIN<br>
 
 <li><code>chmod +x installRosNoetic.sh</code></li>
