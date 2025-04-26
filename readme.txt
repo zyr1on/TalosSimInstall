@@ -15,10 +15,11 @@ curl
 $ chmod +x install.sh
 $ ./install.sh
 
-# ROS NEOTIC YOKSA INDIRMEK ICIN<br>
-$ chmod +x installRosNoetic.sh
-$ ./installRosNoetic.sh
-
 # SIM CALISTIRMAK ICIN
 $ chmod +x run.sh
 $ ./run.sh
+
+# ROS NEOTIC YOKSA INDIRMEK ICIN
+$ chmod +x installRosNoetic.sh
+$ ./installRosNoetic.sh
+
