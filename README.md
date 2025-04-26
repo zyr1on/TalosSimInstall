@@ -11,7 +11,7 @@ gazebo9 libgazebo9-dev
 git 
 curl
 
-# TALOS SIM INDIRMEK ICIN
+# TALOS SIM INDIRMEK ICIN ($ kopyalamayın)
 $ chmod +x install.sh
 $ ./install.sh
 
