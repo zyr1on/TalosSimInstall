@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.4">
+  
+  <world name="default">
+  
+    <gui fullscreen='0'>
+  
+      <plugin name='keyboard' filename='libkbplug.so'/>
+  
+        <camera name="user_camera">
+          <pose>-2.720621 -20.049240 20.879688 0  0.556001 1.48399</pose>
+        </camera>
+    
+    </gui>
+   
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>48.6261047339576</latitude_deg>
+      <longitude_deg>1.77238747433387</longitude_deg>
+      <elevation>0.0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+  
+  
+   
+    <scene>
+      <grid>false</grid>
+      <origin_visual>false</origin_visual>
+      <ambient>0.592 0.624 0.635 1</ambient>
+      <background>0.35 0.35 0.35 1.0</background>
+      <shadows>false</shadows>
+    </scene>
+      <light type="directional" name="sun">
+      <pose>22 -4 103 0 -1 0</pose>
+      <cast_shadows>false</cast_shadows>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>1002</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.4</direction>
+    </light> 
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.0003</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>0</real_time_update_rate>
+    </physics>
+   
+    <!-- <model name="shaderbox">
+      <pose>0 0 -5 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.1 0.1 0.1</size>
+            </box>
+          </geometry>
+        <material>
+            <script>
+              <uri>file://media/materials/scripts/citysim.material</uri>
+              <name>CitySim/ShinyGrey</name>
+            </script>
+          </material>
+          <plugin name="bloom" filename="libBloomVisualPlugin.so" />
+          <plugin name="lensflare" filename="libLensFlareVisualPlugin.so" />
+        </visual>
+      </link>
+    </model> -->
+
+    <include>
+      <name>ackermann_field</name>
+      <pose>138.5 -86.6 5.011 0 0 1.57</pose>
+      <uri>model://ackermann_field</uri>
+    </include>
+
+    <include>
+      <uri>model://senaryo2</uri>
+      <static>true</static>
+      <pose>46.222340 126.176208 -4.751491 0 0 0</pose>
+    </include>
+
+  <model name="plane">
+    <pose> 0 0 5.010 0 0 </pose>
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>1500 1500</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode><mu>1000</mu><mu2>500</mu2></ode>
+            <contact>
+            <ode><kp>1e+06</kp><kd>100</kd><max_vel>1</max_vel><min_depth>0</min_depth></ode>
+            </contact>
+          </friction>
+        </surface>
+      </collision>
+      
+      <visual name="visual">
+        <geometry>
+           <plane>
+            <normal>0 0 1</normal>
+             <size>1500 1500</size>
+          </plane>
+        </geometry>
+ 		      <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Residential</name>
+            </script>
+          </material>
+      </visual>
+    </link>
+  </model>
+    
+
+   </world>
+</sdf>

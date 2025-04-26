@@ -1,0 +1,9 @@
+<library path="lib/libmode_simulator">
+  <class name="mode_simulator/PlantWaypoint"
+         type="mode_simulator::PlantWaypointTool"
+         base_class_type="rviz::Tool">
+    <description>
+      Tool for planting waypoints on the ground plane in rviz.
+    </description>
+  </class>
+</library>

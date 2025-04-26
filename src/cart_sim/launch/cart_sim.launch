@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="world_name" default="$(find cart_sim)/worlds/empty.world" />
+  <arg name="use_sim_time" default="true" />
+<arg name="rvizconfig" default="$(find cart_sim)/rviz/cart.rviz" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(arg world_name)"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="paused" value="false" />
+    <arg name="headless" value="false"/>
+  </include>
+  <param name="robot_description" command="cat $(find cart_sim)/urdf/golf.urdf" />
+  <node name="spawn_car" pkg="gazebo_ros" type="spawn_model" args="-file $(find cart_sim)/urdf/golf.urdf -urdf -x 4.617099 -y -3.719877 -z 5.044384 -Y -0.016072 -model golf"/>
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+    <!-- <remap from="robot_description" to="different_robot_description" /> -->
+    <!-- <remap from="joint_states" to="/prius/joint_states" /> -->
+  </node>
+ <node pkg="fake_localization" type="fake_localization" name="fake_localization">
+    <!-- <remap from="base_pose_ground_truth" to="/prius/base_pose_ground_truth"/> -->
+  </node>
+<node pkg="joy" type="joy_node" name="joy_node0">
+    <param name="dev" value="/dev/input/js0"/>
+  </node>
+
+  <!-- cloud_transformation -->
+  <node name="cloud_transformer" pkg="cart_sim" type="cloud_transformer" respawn="false"/>
+
+  <node pkg="cart_sim" type="controller" name="controller"/>
+ <node pkg="tf2_ros" type="static_transform_publisher" name="very_inaccurate_odom" args="0 0 0 0 0 0 odom base_link"/>
+
+  <arg name="rviz" default="true"/>
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find cart_sim)/rviz/cart.rviz" />
+
+</launch>
