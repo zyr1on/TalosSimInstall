@@ -1,3 +1,5 @@
+#!/bin/bash
+
 chmod +x *
 sudo apt-get install ros-noetic-pcl-ros ros-noetic-gazebo-ros-pkgs ros-noetic-pcl-conversions gazebo9 libgazebo9-dev git curl
 wget https://filebin.net/dlydd67y3b3ydhqz/models-20250426T091428Z-001.zip
