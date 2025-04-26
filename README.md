@@ -1,22 +1,21 @@
 # TalosSimInstall
 
 # Gereklilikler
-ROS Noetic<br>
-gcc,g++<br>
-ros-noetic-pcl-ros<br> 
-ros-noetic-gazebo-ros-pkgs<br>
-ros-noetic-pcl-conversions<br>
-gazebo9 libgazebo9-dev<br>
-git <br>
-curl<br>
-<br>
+ROS Noetic
+gcc,g++
+ros-noetic-pcl-ros
+ros-noetic-gazebo-ros-pkgs
+ros-noetic-pcl-conversions
+gazebo9 libgazebo9-dev
+git 
+curl
 
 # TALOS SIM INDIRMEK ICIN
-<li><code>chmod +x install.sh</code></li>
-<li><code>./install.sh</code></li>
+$ chmod +x install.sh
+$ ./install.sh
 # ROS NEOTIC YOKSA INDIRMEK ICIN<br>
 
-<li><code>chmod +x installRosNoetic.sh</code></li>
-<li><code>./installRosNoetic.sh</code></li>
+chmod +x installRosNoetic.sh
+./installRosNoetic.sh
 
 
