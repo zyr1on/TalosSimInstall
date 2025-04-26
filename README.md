@@ -1,6 +1,7 @@
 # TalosSimInstall
 
 # Gereklilikler
+
 ROS Noetic
 gcc,g++
 ros-noetic-pcl-ros
@@ -13,9 +14,9 @@ curl
 # TALOS SIM INDIRMEK ICIN
 $ chmod +x install.sh
 $ ./install.sh
-# ROS NEOTIC YOKSA INDIRMEK ICIN<br>
 
-chmod +x installRosNoetic.sh
-./installRosNoetic.sh
+# ROS NEOTIC YOKSA INDIRMEK ICIN<br>
+$ chmod +x installRosNoetic.sh
+$ ./installRosNoetic.sh
 
 
