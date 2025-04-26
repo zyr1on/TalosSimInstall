@@ -11,7 +11,7 @@ git <br>
 curl<br>
 <br>
 
-#ROS NEOTIC INDIRMEK ICIN<br>
+#ROS NEOTIC YOKSA INDIRMEK ICIN<br>
 
 <li><code>chmod +x installRosNoetic.sh</code></li>
 <li><code>./installRosNoetic.sh</code></li>
